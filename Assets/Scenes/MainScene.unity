@@ -754,7 +754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stagetext: {fileID: 658554561}
-  stage: 98
+  stage: 1
   boss: 0
 --- !u!1 &744661019
 GameObject:
