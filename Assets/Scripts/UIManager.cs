@@ -37,11 +37,10 @@ public class UIManager : MonoBehaviour
             }
         }
     }
-
     public void UpdateUI()
     {        
-        stagetext.text = string.Format("STAGE\n{0}", stage);
-        if (stage >= 99)
+        stagetext.text = string.Format("LEVEL\n{0}", stage);
+        if (stage >= 99&&boss==false)
         {
             boss = true;
             col.enabled = false;
@@ -120,6 +119,7 @@ public class UIManager : MonoBehaviour
                 stage++;
                 UpdateUI();
             }
+            yield return null;
         }
     }
 }

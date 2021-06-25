@@ -39,15 +39,17 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(2.5f, 4f));
         while (true)
-        {
-            
+        {           
             for (int i=0; i<uIManager.stage+2; i++)
             {
+                if(uIManager.boss==false)
+                {
                     float rand = Random.Range(-7f, 7f);
                     GameObject enemy = null;
                     enemy = Instantiate(enemy1, new Vector2(rand, 17), Quaternion.identity);
                     enemy.transform.SetParent(null);
-                    yield return new WaitForSeconds(Random.Range(0.2f, 0.4f));             
+                    yield return new WaitForSeconds(Random.Range(0.2f, 0.4f));
+                }        
             }
             yield return new WaitForSeconds(Random.Range(2.5f, 4f));
         }
@@ -60,12 +62,15 @@ public class GameManager : MonoBehaviour
             float rand = Random.Range(-4f, 4f);
             for (int i = 0; i <uIManager.stage*0.5f; i++)
             {
+                if(uIManager.boss==false)
+                {
                     GameObject enemy = null;
                     enemy = Instantiate(enemy2, new Vector2(rand - (i * 2), 17), Quaternion.identity);
                     enemy.transform.SetParent(null);
                     enemy = Instantiate(enemy2, new Vector2(rand + (i * 2), 17), Quaternion.identity);
                     enemy.transform.SetParent(null);
                     yield return new WaitForSeconds(0.2f);
+                }
             }
             yield return new WaitForSeconds(Random.Range(5f, 8f));
         }
@@ -78,10 +83,13 @@ public class GameManager : MonoBehaviour
             float rand = Random.Range(-6f, 6f);
             for (int i = 0; i < 1; i++)
             {
+                if(uIManager.boss==false)
+                {
                     GameObject enemy = null;
                     enemy = Instantiate(enemy3, new Vector2(rand, 17), Quaternion.identity);
                     enemy.transform.SetParent(null);
                     yield return new WaitForSeconds(0.2f);
+                }
             }
             yield return new WaitForSeconds(Random.Range(5f-(uIManager.stage*0.3f), 10f-(uIManager.stage*0.7f)));
         }

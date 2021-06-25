@@ -98,7 +98,7 @@ public class NumberMove : MonoBehaviour
                 this.bullet = true;
             }   
         }
-        if(this.transform.parent&&collision.gameObject.CompareTag("Enemy"))
+        if (this.transform.parent&&collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(collision.gameObject);
             this.bullet = false;

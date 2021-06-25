@@ -88,7 +88,7 @@ public class EnemyMove : MonoBehaviour
             {
                 deathBullet = Instantiate(eBullet, transform);
                 deathBullet.transform.localScale = new Vector3(0.7f, 0.7f, 1f);
-                deathBullet.transform.Rotate(0, 0, i * 45);
+                deathBullet.transform.Rotate(0, 0, i*45);
                 deathBullet.transform.SetParent(null);
             }
         }

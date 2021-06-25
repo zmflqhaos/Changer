@@ -9,6 +9,7 @@ public class FadeIn : MonoBehaviour
     private Image image = null;
     private float time = 0f;
     private float F_time = 1f;
+
     void Start()
     {
         image.gameObject.SetActive(true);

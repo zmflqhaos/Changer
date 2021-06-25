@@ -58,8 +58,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ShootNum.cs" />
     <Compile Include="Assets\Scripts\LifeManager.cs" />
+    <Compile Include="Assets\Scripts\FadeIn.cs" />
     <Compile Include="Assets\Scripts\Enemy3Move.cs" />
     <Compile Include="Assets\Scripts\BackgroundMove.cs" />
+    <Compile Include="Assets\Scripts\Joy.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\EnemyMove.cs" />
     <Compile Include="Assets\Scripts\NumberMove.cs" />
@@ -69,9 +71,9 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\BulletMove.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
-    <Compile Include="Assets\Scripts\Enemy2Move.cs" />
-    <Compile Include="Assets\Scripts\FadeIn.cs" />
     <Compile Include="Assets\Scripts\BossMove.cs" />
+    <Compile Include="Assets\Scripts\Enemy2Move.cs" />
+    <Compile Include="Assets\Scripts\Exit.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\sprites\SimpleAdditiveSprite.shader" />

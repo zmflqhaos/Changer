@@ -26,7 +26,8 @@ public class LifeManager : MonoBehaviour
     public void Dead()
     {
         life--;
-        if(life<=0)
+        UpdateUI();
+        if (life<=0)
         {
             StartCoroutine(GameOver());
         }

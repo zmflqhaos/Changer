@@ -20,7 +20,12 @@ public class PlayerMove : MonoBehaviour
     public bool active = true;
     private GameManager gameManager = null;
     private LifeManager lifeManager = null;
+    private Joy joystick;
 
+    void Awake()
+    {
+        joystick = GameObject.FindObjectOfType<Joy>();
+    }
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -30,20 +35,47 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0) == true)
+        if (joystick.Horizontal != 0 || joystick.Vertical != 0)
         {
-            targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            targetPosition.x = Mathf.Clamp(targetPosition.x, gameManager.minPosition.x, gameManager.maxPosition.x);
-            targetPosition.y = Mathf.Clamp(targetPosition.y, gameManager.minPosition.y, gameManager.maxPosition.y);
-            transform.localPosition = Vector2.MoveTowards(transform.localPosition, targetPosition, speed * Time.deltaTime);
+            MoveControl();
         }
     }
 
+    private void MoveControl()
+    {
+        Vector3 upMovement = Vector3.up * speed * Time.deltaTime * joystick.Vertical;
+        Vector3 rightMovement = Vector3.right * speed * Time.deltaTime * joystick.Horizontal;
+        if(transform.position.y <= -13f)
+        {
+            transform.position += new Vector3(0, 0.01f, 0);
+        }
+        else if(transform.position.y >= 13f)
+        {
+            transform.position -= new Vector3(0, 0.01f, 0);
+        }
+        else
+        {
+            transform.position += upMovement;
+        }
+        if (transform.position.x <= -7f)
+        {
+            transform.position += new Vector3(0.01f, 0, 0);
+        }
+        else if (transform.position.x >= 7f)
+        {
+            transform.position -= new Vector3(0.01f, 0, 0);
+        }
+        else
+        {
+            transform.position += rightMovement;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             if (isDamaged) return;
+            lifeManager.Dead();
             StartCoroutine(Damaged(collision));
         }
     }
