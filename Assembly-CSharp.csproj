@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8D80DF44-E58E-B2EF-7402-88CCF864BC74}</ProjectGuid>
+    <ProjectGuid>{A628F816-9FF2-1544-A78E-D83CE2E63561}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\EnemyMove.cs" />
     <Compile Include="Assets\Scripts\NumberMove.cs" />
     <Compile Include="Assets\Scripts\NumPoolManager.cs" />
+    <Compile Include="Assets\Scripts\Exit.cs" />
     <Compile Include="Assets\Scripts\GameStart.cs" />
     <Compile Include="Assets\Scripts\PoolManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
@@ -73,7 +74,7 @@
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\BossMove.cs" />
     <Compile Include="Assets\Scripts\Enemy2Move.cs" />
-    <Compile Include="Assets\Scripts\Exit.cs" />
+    <Compile Include="Assets\Scripts\MonoSingleton.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\sprites\SimpleAdditiveSprite.shader" />

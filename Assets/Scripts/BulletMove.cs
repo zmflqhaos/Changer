@@ -7,10 +7,8 @@ public class BulletMove : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     private float speed = 10f;
-    private GameManager gameManager = null;
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -22,19 +20,19 @@ public class BulletMove : MonoBehaviour
 
     private void CheckLimit()
     {
-        if (transform.position.y > gameManager.maxPosition.y + 2.5f)
+        if (transform.position.y > GameManager.Instance.maxPosition.y + 2.5f)
         {
             Despawn();
         }
-        if (transform.position.y < gameManager.minPosition.y - 2.5f)
+        if (transform.position.y < GameManager.Instance.minPosition.y - 2.5f)
         {
             Despawn();
         }
-        if (transform.position.x > gameManager.maxPosition.x + 2f)
+        if (transform.position.x > GameManager.Instance.maxPosition.x + 2f)
         {
             Despawn();
         }
-        if (transform.position.x < gameManager.minPosition.x - 2f)
+        if (transform.position.x < GameManager.Instance.minPosition.x - 2f)
         {
             Despawn();
         }
@@ -44,7 +42,7 @@ public class BulletMove : MonoBehaviour
     {
         if(gameObject.CompareTag("Bullet"))
         {
-            transform.SetParent(gameManager.poolManager.transform, false);
+            transform.SetParent(GameManager.Instance.poolManager.transform, false);
             gameObject.SetActive(false);
         }
         else
